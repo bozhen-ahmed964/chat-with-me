@@ -1,6 +1,6 @@
 import 'package:chatwithme/service/auth_service.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -12,49 +12,27 @@ class _HomePageState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.network(FirebaseAuth.instance.currentUser!.photoURL! , scale: 0.7, ),
-            Text(
-              FirebaseAuth.instance.currentUser!.displayName!,
-              style: const TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              FirebaseAuth.instance.currentUser!.email!,
-              style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87),
-            ),
-            
-            const SizedBox(
-              height: 30,
-            ),
-            MaterialButton(
-              padding: const EdgeInsets.all(10),
-              color: Colors.green,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5)),
-              child: const Text(
-                'LOG OUT',
-                style: TextStyle(color: Colors.white, fontSize: 15),
-              ),
+      appBar: AppBar(
+        title: Text('Friends List' , style : TextStyle(fontWeight: FontWeight.bold)),
+        centerTitle: false,
+        actions: [
+          IconButton(
+              onPressed: () {
+              },
+              icon: FaIcon(
+                FontAwesomeIcons.gear,
+                size: 28,
+              )),
+          IconButton(
               onPressed: () {
                 AuthService().signOut();
               },
-            ),
-          ],
-        ),
+              icon: FaIcon(
+                FontAwesomeIcons.rightFromBracket,
+                size: 28,
+              )),
+        ],
+        backgroundColor: Color.fromARGB(255, 168, 5, 65),
       ),
     );
   }
