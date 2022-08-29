@@ -18,6 +18,7 @@ class _HomePageState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.network(FirebaseAuth.instance.currentUser!.photoURL! , scale: 0.7, ),
             Text(
               FirebaseAuth.instance.currentUser!.displayName!,
               style: const TextStyle(
@@ -35,6 +36,7 @@ class _HomePageState extends State<HomeScreen> {
                   fontWeight: FontWeight.bold,
                   color: Colors.black87),
             ),
+            
             const SizedBox(
               height: 30,
             ),
