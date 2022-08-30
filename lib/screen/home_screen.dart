@@ -1,6 +1,7 @@
 
 import 'package:chatwithme/screen/login_screen.dart';
 import 'package:chatwithme/screen/profile_screen.dart';
+import 'package:chatwithme/screen/search_screen.dart';
 import 'package:chatwithme/service/auth_service.dart';
 import 'package:chatwithme/widget/group_tile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -68,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
               onPressed: () {
-                nextScreen(context, const SearchPage());
+                nextScreen(context, const SearchScreen());
               },
               icon: const Icon(
                 Icons.search,

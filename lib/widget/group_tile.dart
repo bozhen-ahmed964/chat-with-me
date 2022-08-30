@@ -1,3 +1,4 @@
+import 'package:chatwithme/screen/chat_screen.dart';
 import 'package:chatwithme/widget/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class _GroupTileState extends State<GroupTile> {
       onTap: () {
         nextScreen(
             context,
-            ChatPage(
+            ChatScreen(
               groupId: widget.groupId,
               groupName: widget.groupName,
               userName: widget.userName,
