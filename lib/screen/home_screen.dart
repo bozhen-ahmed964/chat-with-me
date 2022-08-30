@@ -1,4 +1,3 @@
-import 'package:chatwithme/screen/setting_screen.dart';
 import 'package:chatwithme/service/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -14,15 +13,16 @@ class _HomePageState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Friends List' , style : TextStyle(fontWeight: FontWeight.bold)),
+        title:
+            Text('Friends List', style: TextStyle(fontWeight: FontWeight.bold)),
         centerTitle: false,
         actions: [
           IconButton(
               onPressed: () {
-                 Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SettingScreen()),
-                );
+                //  Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => SettingScreen()),
+                // );
               },
               icon: FaIcon(
                 FontAwesomeIcons.gear,

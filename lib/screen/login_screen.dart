@@ -66,11 +66,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       AuthService().signInWithGoogle();
                     },
                     child: Row(
-                      mainAxisAlignment : MainAxisAlignment.spaceBetween,
-                      children: [ 
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
                         FaIcon(FontAwesomeIcons.google),
-                        Text('Continue with Google' , style: TextStyle(fontWeight: FontWeight.bold)),
-                       
+                        Text('Continue with Google',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ],
                     )),
               ),

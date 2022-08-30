@@ -3,9 +3,9 @@ import 'package:google_sign_in/google_sign_in.dart';
 import '../screen/home_screen.dart';
 import '../screen/login_screen.dart';
 import 'package:flutter/material.dart';
+
+//sign in & sign out Google
 class AuthService {
-
-
   //Determine if the user is authenticated.
   handleAuthState() {
     return StreamBuilder(
@@ -19,8 +19,7 @@ class AuthService {
         });
   }
 
-
-signInWithGoogle() async {
+  signInWithGoogle() async {
     // Trigger the authentication flow
     final GoogleSignInAccount? googleUser =
         await GoogleSignIn(scopes: <String>["email"]).signIn();
@@ -39,15 +38,8 @@ signInWithGoogle() async {
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
-
 //Sign out
   signOut() {
     FirebaseAuth.instance.signOut();
   }
-
-
-
-
-
-
 }
