@@ -6,12 +6,21 @@ import 'package:chatwithme/shared/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-bool isWhite = false;
-
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(MyApp());
+
+  // if (kIsWeb) {
+  //   await Firebase.initializeApp(
+  //       options: FirebaseOptions(
+  //           apiKey: Constants.apiKey,
+  //           appId: Constants.appId,
+  //           messagingSenderId: Constants.messagingSenderId,
+  //           projectId: Constants.projectId));
+  // } else {
+    await Firebase.initializeApp();
+  // }
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -47,7 +56,7 @@ class _MyAppState extends State<MyApp> {
           primaryColor: Constants().primaryColor,
           scaffoldBackgroundColor: Colors.white),
       debugShowCheckedModeBanner: false,
-      home: _isSignedIn ?  HomeScreen() :  LoginScreen(),
+      home: _isSignedIn ? HomeScreen() : const LoginScreen(),
     );
   }
 }
