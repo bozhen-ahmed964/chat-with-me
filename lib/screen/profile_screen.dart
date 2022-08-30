@@ -1,8 +1,6 @@
-
 import 'package:chatwithme/screen/home_screen.dart';
 import 'package:chatwithme/widget/widgets.dart';
 import 'package:flutter/material.dart';
-
 import '../service/auth_service.dart';
 import 'login_screen.dart';
 
