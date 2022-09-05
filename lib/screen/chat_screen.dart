@@ -99,10 +99,6 @@ class _ChatPageState extends State<ChatScreen> {
                   child: Container(
                     height: 50,
                     width: 50,
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: BorderRadius.circular(30),
-                    ),
                     child: const Center(
                         child: Icon(
                       Icons.send,
