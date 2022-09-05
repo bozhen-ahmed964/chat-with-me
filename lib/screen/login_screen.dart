@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chatwithme/helper/helper_function.dart';
 import 'package:chatwithme/screen/home_screen.dart';
 import 'package:chatwithme/screen/register_screen.dart';
@@ -42,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         const Text(
-                          "Groupie",
+                          "Chat With Me",
                           style: TextStyle(
                               fontSize: 40, fontWeight: FontWeight.bold),
                         ),
@@ -50,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         const Text("Login now to see what they are talking!",
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.w400)),
-                        Image.asset("assets/login.png"),
+                        CachedNetworkImage(imageUrl: 'https://media.istockphoto.com/vectors/register-account-submit-access-login-password-username-internet-vector-id1281150061?k=20&m=1281150061&s=612x612&w=0&h=wpCvmggedXRECWK-FVL98MMllubyevIrXuUu50fdCqE='),
                         TextFormField(
                           decoration: textInputDecoration.copyWith(
                               labelText: "Email",

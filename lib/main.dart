@@ -1,7 +1,6 @@
 import 'package:chatwithme/helper/helper_function.dart';
 import 'package:chatwithme/screen/home_screen.dart';
 import 'package:chatwithme/screen/login_screen.dart';
-import 'package:chatwithme/service/auth_service.dart';
 import 'package:chatwithme/shared/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -9,16 +8,7 @@ import 'package:flutter/material.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // if (kIsWeb) {
-  //   await Firebase.initializeApp(
-  //       options: FirebaseOptions(
-  //           apiKey: Constants.apiKey,
-  //           appId: Constants.appId,
-  //           messagingSenderId: Constants.messagingSenderId,
-  //           projectId: Constants.projectId));
-  // } else {
-    await Firebase.initializeApp();
-  // }
+  await Firebase.initializeApp();
 
   runApp(const MyApp());
 }

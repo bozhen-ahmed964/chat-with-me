@@ -1,4 +1,5 @@
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chatwithme/screen/home_screen.dart';
 import 'package:chatwithme/widget/widgets.dart';
 import 'package:flutter/gestures.dart';
@@ -40,7 +41,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         const Text(
-                          "Groupie",
+                          "Chat With Me",
                           style: TextStyle(
                               fontSize: 40, fontWeight: FontWeight.bold),
                         ),
@@ -49,7 +50,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             "Create your account now to chat and explore",
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.w400)),
-                        Image.asset("assets/register.png"),
+                        CachedNetworkImage(imageUrl: 'https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?w=2000'),
                         TextFormField(
                           decoration: textInputDecoration.copyWith(
                               labelText: "Full Name",
