@@ -196,7 +196,7 @@ class _SearchScreenState extends State<SearchScreen> {
             ? Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.black,
+                  color: Color.fromARGB(255, 17, 169, 53),
                   border: Border.all(color: Colors.white, width: 1),
                 ),
                 padding:
@@ -209,7 +209,7 @@ class _SearchScreenState extends State<SearchScreen> {
             : Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Theme.of(context).primaryColor,
+                  color: Color.fromARGB(255, 3, 131, 237),
                 ),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 10),

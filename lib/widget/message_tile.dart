@@ -35,36 +35,38 @@ class _MessageTileState extends State<MessageTile> {
         decoration: BoxDecoration(
             borderRadius: widget.sentByMe
                 ? const BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                    bottomLeft: Radius.circular(20),
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                    bottomLeft: Radius.circular(30),
                   )
                 : const BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                    bottomRight: Radius.circular(20),
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                    bottomRight: Radius.circular(30),
                   ),
             color: widget.sentByMe
-                ? Theme.of(context).primaryColor
-                : Colors.grey[700]),
+                ? Color.fromARGB(255, 0, 144, 205)
+                : Color.fromARGB(255, 122, 122, 122)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            //sender & reciver name 
             Text(
               widget.sender.toUpperCase(),
               textAlign: TextAlign.start,
               style: const TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400,
+                  color: Color.fromARGB(255, 255, 255, 255),
                   letterSpacing: -0.5),
             ),
+            // sender and reciver messages
             const SizedBox(
               height: 8,
             ),
             Text(widget.message,
                 textAlign: TextAlign.start,
-                style: const TextStyle(fontSize: 16, color: Colors.white))
+                style: const TextStyle(fontSize: 16, color: Color.fromARGB(255, 255, 255, 255)))
           ],
         ),
       ),
