@@ -1,3 +1,4 @@
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chatwithme/screen/login_screen.dart';
 import 'package:chatwithme/screen/profile_screen.dart';
@@ -6,6 +7,7 @@ import 'package:chatwithme/service/auth_service.dart';
 import 'package:chatwithme/widget/group_tile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 
 import '../helper/helper_function.dart';
 import '../service/database_service.dart';
@@ -66,6 +68,15 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: <Color>[Colors.red, Colors.blue],
+            ),
+          ),
+        ),
         actions: [
           IconButton(
               onPressed: () {
@@ -85,6 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       drawer: Drawer(
+      
           child: ListView(
         padding: const EdgeInsets.symmetric(vertical: 50),
         children: <Widget>[

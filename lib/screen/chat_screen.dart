@@ -1,7 +1,10 @@
+import 'dart:io';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chatwithme/screen/group_info.dart';
 import 'package:chatwithme/service/database_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../widget/message_tile.dart';
 import '../widget/widgets.dart';
@@ -22,6 +25,8 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatScreen> {
+  ImagePicker picker = ImagePicker();
+  XFile? image;
   Stream<QuerySnapshot>? chats;
   TextEditingController messageController = TextEditingController();
   String admin = "";
@@ -50,6 +55,15 @@ class _ChatPageState extends State<ChatScreen> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: <Color>[Colors.red, Colors.blue],
+            ),
+          ),
+        ),
         centerTitle: true,
         elevation: 0,
         title: Text(widget.groupName),
@@ -71,7 +85,18 @@ class _ChatPageState extends State<ChatScreen> {
       body: Stack(
         children: <Widget>[
           // chat messages here
-          chatMessages(),
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: CachedNetworkImageProvider(
+                  'https://images.unsplash.com/photo-1620055374842-145f66ec4652?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80',
+                ),
+              ),
+            ),
+            height: 660,
+            child: chatMessages(),
+          ),
 
           Container(
             alignment: Alignment.bottomCenter,
@@ -81,7 +106,7 @@ class _ChatPageState extends State<ChatScreen> {
               width: MediaQuery.of(context).size.width,
               height: 77,
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 0, 0, 0),
+                color: Color.fromARGB(255, 255, 255, 255),
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30)),
@@ -99,8 +124,8 @@ class _ChatPageState extends State<ChatScreen> {
                   Expanded(
                     child: TextFormField(
                       controller: messageController,
-                      style:
-                          const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+                      style: const TextStyle(
+                          color: Color.fromARGB(255, 108, 108, 108)),
                       decoration: const InputDecoration(
                         fillColor: Color.fromARGB(255, 255, 255, 255),
                         filled: true,
@@ -108,7 +133,7 @@ class _ChatPageState extends State<ChatScreen> {
                         hintStyle: TextStyle(
                             color: Color.fromARGB(255, 0, 0, 0), fontSize: 14),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          borderRadius: BorderRadius.all(Radius.circular(15)),
                         ),
                       ),
                     ),
@@ -116,29 +141,68 @@ class _ChatPageState extends State<ChatScreen> {
                   const SizedBox(
                     width: 12,
                   ),
-                   GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      height: 50,
-                      width: 50,
-                      child: const Center(
-                          child: Icon(
-                        Icons.image_rounded,
-                        color: Colors.white,
-                      )),
-                    ),
-                  ),
                   GestureDetector(
                     onTap: () {
-
+                      showDialog(
+                          barrierDismissible: false,
+                          context: context,
+                          builder: (context) {
+                            return SimpleDialog(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              backgroundColor: Colors.white,
+                              title: Text('Select File From',
+                                  style: TextStyle(color: Colors.black)),
+                              children: [
+                                SimpleDialogOption(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Text(
+                                    'Take a photo',
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                  onPressed: () async {
+                                    image = await picker.pickImage(
+                                        source: ImageSource.camera);
+                                    setState(() {
+                                      clearImage();
+                                    });
+                                  },
+                                ),
+                                image == null
+                                    ? Container()
+                                    : Image.file(File(image!.path)),
+                                SimpleDialogOption(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Text('Chose from gallery',
+                                      style: TextStyle(color: Colors.black)),
+                                  onPressed: () async {
+                                    image = await picker.pickImage(
+                                        source: ImageSource.gallery);
+                                    setState(() {
+                                      clearImage();
+                                    });
+                                  },
+                                ),
+                                SimpleDialogOption(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Text('Cancel',
+                                      style: TextStyle(color: Colors.black)),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
+                              ],
+                            );
+                          });
                     },
                     child: Container(
                       height: 50,
                       width: 50,
                       child: const Center(
                           child: Icon(
-                        Icons.multitrack_audio,
-                        color: Colors.white,
+                        Icons.menu,
+                        color: Colors.black,
                       )),
                     ),
                   ),
@@ -152,7 +216,7 @@ class _ChatPageState extends State<ChatScreen> {
                       child: const Center(
                           child: Icon(
                         Icons.send,
-                        color: Colors.white,
+                        color: Colors.black,
                       )),
                     ),
                   ),
@@ -188,6 +252,7 @@ class _ChatPageState extends State<ChatScreen> {
   sendMessage() {
     if (messageController.text.isNotEmpty) {
       Map<String, dynamic> chatMessageMap = {
+       
         "message": messageController.text,
         "sender": widget.userName,
         "time": DateTime.now().millisecondsSinceEpoch,
@@ -198,5 +263,11 @@ class _ChatPageState extends State<ChatScreen> {
         messageController.clear();
       });
     }
+  }
+
+  void clearImage() {
+    setState(() {
+      image = null;
+    });
   }
 }

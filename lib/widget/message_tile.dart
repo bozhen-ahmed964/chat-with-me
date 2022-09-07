@@ -23,8 +23,8 @@ class _MessageTileState extends State<MessageTile> {
       padding: EdgeInsets.only(
           top: 4,
           bottom: 4,
-          left: widget.sentByMe ? 0 : 24,
-          right: widget.sentByMe ? 24 : 0),
+          left: widget.sentByMe ? 0 : 15,
+          right: widget.sentByMe ? 15 : 0),
       alignment: widget.sentByMe ? Alignment.centerRight : Alignment.centerLeft,
       child: Container(
         margin: widget.sentByMe

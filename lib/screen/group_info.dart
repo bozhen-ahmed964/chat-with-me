@@ -51,6 +51,15 @@ class _GroupInfoState extends State<GroupInfo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: <Color>[Colors.red, Colors.blue],
+            ),
+          ),
+        ),
         centerTitle: true,
         elevation: 0,
         backgroundColor: Theme.of(context).primaryColor,
@@ -63,7 +72,11 @@ class _GroupInfoState extends State<GroupInfo> {
                     context: context,
                     builder: (context) {
                       return AlertDialog(
-                        title: CachedNetworkImage(imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F6fd7144eeb6f5ed9fcd28a9997caf90c%2Ftenor.gif%3Fitemid%3D11922351&f=1&nofb=1', fit: BoxFit.cover,),
+                        title: CachedNetworkImage(
+                          imageUrl:
+                              'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F6fd7144eeb6f5ed9fcd28a9997caf90c%2Ftenor.gif%3Fitemid%3D11922351&f=1&nofb=1',
+                          fit: BoxFit.cover,
+                        ),
                         content:
                             const Text("Are you sure you exit the group? "),
                         actions: [
