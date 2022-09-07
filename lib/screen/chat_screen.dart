@@ -68,54 +68,96 @@ class _ChatPageState extends State<ChatScreen> {
               icon: const Icon(Icons.info))
         ],
       ),
-      body: Stack( 
+      body: Stack(
         children: <Widget>[
           // chat messages here
           chatMessages(),
-          SizedBox(height: 50),
+
           Container(
             alignment: Alignment.bottomCenter,
             width: MediaQuery.of(context).size.width,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
               width: MediaQuery.of(context).size.width,
-              height: 85,
-              color: Color.fromARGB(255, 85, 87, 91),
-              child: Row(children: [
-                Expanded(
-                  child: TextFormField(
-                    
-                    controller: messageController,
-                    style: const TextStyle(color: Colors.white),
-                    decoration: const InputDecoration(
-                      fillColor: Color.fromARGB(255, 135, 135, 135),
-                      filled: true, 
-                      hintText: "Send a message...",
-                      hintStyle: TextStyle(color: Colors.white, fontSize: 16),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
+              height: 77,
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 0, 0, 0),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 88, 88, 88).withOpacity(0.5),
+                    spreadRadius: 3,
+                    blurRadius: 7,
+                    offset: Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: messageController,
+                      style:
+                          const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+                      decoration: const InputDecoration(
+                        fillColor: Color.fromARGB(255, 255, 255, 255),
+                        filled: true,
+                        hintText: "Send a message...",
+                        hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0), fontSize: 14),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  width: 12,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    sendMessage();
-                  },
-                  child: Container(
-                    height: 50,
-                    width: 50,
-                    child: const Center(
-                        child: Icon(
-                      Icons.send,
-                      color: Colors.white,
-                    )),
+                  const SizedBox(
+                    width: 12,
                   ),
-                )
-              ]),
+                   GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      child: const Center(
+                          child: Icon(
+                        Icons.image_rounded,
+                        color: Colors.white,
+                      )),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      child: const Center(
+                          child: Icon(
+                        Icons.multitrack_audio,
+                        color: Colors.white,
+                      )),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      sendMessage();
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      child: const Center(
+                          child: Icon(
+                        Icons.send,
+                        color: Colors.white,
+                      )),
+                    ),
+                  ),
+                ],
+              ),
             ),
           )
         ],

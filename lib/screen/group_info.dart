@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chatwithme/screen/home_screen.dart';
 import 'package:chatwithme/widget/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -62,7 +63,7 @@ class _GroupInfoState extends State<GroupInfo> {
                     context: context,
                     builder: (context) {
                       return AlertDialog(
-                        title: const Text("Exit"),
+                        title: CachedNetworkImage(imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F6fd7144eeb6f5ed9fcd28a9997caf90c%2Ftenor.gif%3Fitemid%3D11922351&f=1&nofb=1', fit: BoxFit.cover,),
                         content:
                             const Text("Are you sure you exit the group? "),
                         actions: [

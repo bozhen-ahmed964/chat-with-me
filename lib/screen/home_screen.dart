@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chatwithme/screen/login_screen.dart';
 import 'package:chatwithme/screen/profile_screen.dart';
 import 'package:chatwithme/screen/search_screen.dart';
@@ -142,7 +143,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   context: context,
                   builder: (context) {
                     return AlertDialog(
-                      title: const Text("Logout"),
+                      title: CachedNetworkImage(
+                        imageUrl:
+                            'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.tenor.co%2Fimages%2Fc9696fda85b7ca46a5b06eb62d19f40c%2Fraw&f=1&nofb=1',
+                        fit: BoxFit.cover,
+                      ),
                       content: const Text("Are you sure you want to logout?"),
                       actions: [
                         IconButton(
@@ -205,10 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
           return StatefulBuilder(
             builder: ((context, setState) {
               return AlertDialog(
-                title: const Text(
-                  "Create a group",
-                  textAlign: TextAlign.left,
-                ),
+                title: CachedNetworkImage(imageUrl:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2Fd08e07e8bc117050c5ea6f691d37814a%2Ftenor.gif%3Fitemid%3D5275417&f=1&nofb=1' , fit: BoxFit.cover),
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -225,6 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                             style: const TextStyle(color: Colors.black),
                             decoration: InputDecoration(
+                              hintText: 'Group Name',
                                 enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                         color: Theme.of(context).primaryColor),
