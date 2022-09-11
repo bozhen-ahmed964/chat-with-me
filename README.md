@@ -8,15 +8,19 @@
 </h1>
 <h4 align="center">Group Chatting Application</h4>
 
-<div align="center">
+<div align="center" style="padding: 15px; margin: 15px;">
+<img width="400" height="900" src="https://user-images.githubusercontent.com/73129016/189548008-fc52a256-8107-4c15-a207-e4c8427bd5e6.png" />
+<img width="400" height="900" src="https://user-images.githubusercontent.com/73129016/189548153-fae4929b-bd44-4c66-9879-bc3e0239fc93.png" />
 
-[![](https://img.shields.io/badge/Made_with-Flutter-blue?style=for-the-badge&logo=flutter)](https://flutter.dev/docs)
-[![](https://img.shields.io/badge/Database-Firebase-yellow?style=for-the-badge&logo=firebase)](https://firebase.google.com/docs)
-[![](https://img.shields.io/badge/IDE-Visual_Studio_Code-red?style=for-the-badge&logo=visual-studio-code)](https://code.visualstudio.com/ "Visual Studio Code")
-
+<img width="400" height="900" src="https://user-images.githubusercontent.com/73129016/189548231-fa48e5aa-8b02-4e2c-88fb-f1aec8a018bf.png" />
+<img width="400" height="900" src="https://user-images.githubusercontent.com/73129016/189548254-91173e42-343e-4d2f-a9f9-26076fec2faa.png" />
+  
+<img width="400" height="900" src="https://user-images.githubusercontent.com/73129016/189548296-4da00505-0c9c-4951-933a-8e8135c3dd48.png" />
+<img width="400" height="900" src="https://user-images.githubusercontent.com/73129016/189548304-5642d160-37bc-423e-9ac2-a5c6ffacb533.png" />
+  
+<img width="400" height="900" src="https://user-images.githubusercontent.com/73129016/189548323-ff35c7c9-98cd-4751-aeae-856176f3da51.png" />
+<img width="400" height="900" src="https://user-images.githubusercontent.com/73129016/189548330-bb6d32bd-601f-46c5-9c02-873a786f056e.png" />
 </div>
-
-## 📱 Demo
 
 
 
