@@ -1,4 +1,3 @@
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chatwithme/screen/login_screen.dart';
 import 'package:chatwithme/screen/profile_screen.dart';
@@ -7,7 +6,6 @@ import 'package:chatwithme/service/auth_service.dart';
 import 'package:chatwithme/widget/group_tile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 
 import '../helper/helper_function.dart';
 import '../service/database_service.dart';
@@ -96,7 +94,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       drawer: Drawer(
-      
           child: ListView(
         padding: const EdgeInsets.symmetric(vertical: 50),
         children: <Widget>[
@@ -222,7 +219,10 @@ class _HomeScreenState extends State<HomeScreen> {
           return StatefulBuilder(
             builder: ((context, setState) {
               return AlertDialog(
-                title: CachedNetworkImage(imageUrl:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2Fd08e07e8bc117050c5ea6f691d37814a%2Ftenor.gif%3Fitemid%3D5275417&f=1&nofb=1' , fit: BoxFit.cover),
+                title: CachedNetworkImage(
+                    imageUrl:
+                        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2Fd08e07e8bc117050c5ea6f691d37814a%2Ftenor.gif%3Fitemid%3D5275417&f=1&nofb=1',
+                    fit: BoxFit.cover),
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -239,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                             style: const TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                              hintText: 'Group Name',
+                                hintText: 'Group Name',
                                 enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                         color: Theme.of(context).primaryColor),

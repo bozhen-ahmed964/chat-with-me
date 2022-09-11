@@ -94,7 +94,7 @@ class _ChatPageState extends State<ChatScreen> {
                 ),
               ),
             ),
-            height: 660,
+            height: 665,
             child: chatMessages(),
           ),
 
@@ -106,18 +106,12 @@ class _ChatPageState extends State<ChatScreen> {
               width: MediaQuery.of(context).size.width,
               height: 77,
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 255, 255, 255),
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 88, 88, 88).withOpacity(0.5),
-                    spreadRadius: 3,
-                    blurRadius: 7,
-                    offset: Offset(0, 2),
-                  ),
-                ],
+                gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: <Color>[Colors.red, Colors.blue],
+                ),
+                
               ),
               child: Row(
                 children: [
@@ -252,7 +246,6 @@ class _ChatPageState extends State<ChatScreen> {
   sendMessage() {
     if (messageController.text.isNotEmpty) {
       Map<String, dynamic> chatMessageMap = {
-       
         "message": messageController.text,
         "sender": widget.userName,
         "time": DateTime.now().millisecondsSinceEpoch,

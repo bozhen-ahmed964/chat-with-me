@@ -31,7 +31,7 @@ class _MessageTileState extends State<MessageTile> {
             ? const EdgeInsets.only(left: 30)
             : const EdgeInsets.only(right: 30),
         padding:
-            const EdgeInsets.only(top: 17, bottom: 17, left: 20, right: 20),
+            const EdgeInsets.only(top: 15, bottom: 13, left: 14, right: 14),
         decoration: BoxDecoration(
             borderRadius: widget.sentByMe
                 ? const BorderRadius.only(
@@ -46,7 +46,7 @@ class _MessageTileState extends State<MessageTile> {
                   ),
             color: widget.sentByMe
                 ? Color.fromARGB(255, 0, 144, 205)
-                : Color.fromARGB(255, 122, 122, 122)),
+                : Color.fromARGB(255, 231, 102, 102)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -66,7 +66,7 @@ class _MessageTileState extends State<MessageTile> {
             ),
             Text(widget.message,
                 textAlign: TextAlign.start,
-                style: const TextStyle(fontSize: 16, color: Color.fromARGB(255, 255, 255, 255)))
+                style: const TextStyle(fontSize: 14, color: Color.fromARGB(255, 255, 255, 255)))
           ],
         ),
       ),

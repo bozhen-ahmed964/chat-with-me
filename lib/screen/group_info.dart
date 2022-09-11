@@ -115,6 +115,7 @@ class _GroupInfoState extends State<GroupInfo> {
         ],
       ),
       body: Container(
+
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(
           children: [

@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
           primaryColor: Constants().primaryColor,
           scaffoldBackgroundColor: Colors.white),
       debugShowCheckedModeBanner: false,
-      home: _isSignedIn ? HomeScreen() : const LoginScreen(),
+      home: _isSignedIn ? const HomeScreen() : const LoginScreen(),
     );
   }
 }
