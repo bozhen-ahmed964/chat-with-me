@@ -1,7 +1,7 @@
 <h1 align="center">
   <br>
 
-  <img src="https://user-images.githubusercontent.com/73129016/188907541-ba1f9258-78e7-4ba3-a945-c28dc2dbea5f.png" alt="Much Melody" width="200">
+  <img src="https://user-images.githubusercontent.com/73129016/189546352-40e8fbb5-97d7-49a8-b9d6-07ca8ff19077.png" alt="Chat With Me" width="200">
   <br>
  Chat With Me
   <br>
@@ -20,16 +20,24 @@
 
 
 
+## Features
+
+- [X] Login & Register
+- [X] continue with google account
+- [X] Validation
+- [X] Creating group to chat 
+- [X] Realtime chat
+- [X] Seaching for group should be equal to group name 
+- [X] Crossplatfom 
 
 
-## Key Features
+## Soon!!
 
-* Login & Register
-  - or continue with google account 
-* creating group to chat 
-* realtime chat
-* seaching for group should be equal to group name 
-* crossplatfom 
+- [ ] User Profile
+- [ ] Uploading image
+- [ ] Voice message 
+- [ ] Sending GIF
+
 
 
 ## How To Use
@@ -62,6 +70,7 @@ This software uses the following open source from pub dev :
 - firebase_auth: ^3.7.0
 - cloud_firestore: ^3.4.6
 - cached_network_image: ^3.2.1
+
 
 
 
